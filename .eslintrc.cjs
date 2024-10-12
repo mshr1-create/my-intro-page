@@ -20,6 +20,8 @@ module.exports = {
     },
     rules: {
       '@typescript-eslint/no-explicit-any': 'error', // `any` 型の使用を禁止
+      'react/react-in-jsx-scope': 'off', // React 17以降では不要
+      'react/jsx-no-target-blank': ['error', { allowReferrer: false }], // セキュリティリスク防止
     },
     settings: {
       react: {
