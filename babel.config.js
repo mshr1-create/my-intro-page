@@ -5,4 +5,7 @@ export default {
     '@babel/preset-react', // JSX をトランスパイル
     '@babel/preset-typescript', // 追加
   ],
+  plugins: [
+    '@babel/plugin-transform-modules-commonjs', // 追加
+  ],
 };

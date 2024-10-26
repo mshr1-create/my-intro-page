@@ -12,7 +12,7 @@
     "preview": "vite preview",
     "build:client": "webpack --config webpack.client.js",
     "build:server": "webpack --config webpack.server.js",
-    "start:server": "node build/server.bundle.mjs"
+    "start:server": "node build/server.bundle.cjs"
   },
   "dependencies": {
     "express": "^4.21.1",
@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.25.9",
+    "@babel/plugin-transform-modules-commonjs": "^7.25.9",
     "@babel/preset-env": "^7.25.9",
     "@babel/preset-react": "^7.25.9",
     "@babel/preset-typescript": "^7.26.0",

@@ -11,15 +11,15 @@ export default {
   target: 'node14', // Node.js 環境向けのビルド
   mode: 'development',
   output: {
-    filename: 'server.bundle.mjs', // 出力ファイル名
+    filename: 'server.bundle.cjs', // 出力ファイル名
     path: path.resolve(__dirname, 'build'), // 出力ディレクトリ
-    libraryTarget: 'module', // ESモジュールとして出力
-    module: true,
+    // libraryTarget: 'module', // ESモジュールとして出力
+    // module: true,
     chunkFormat: 'module', // チャンク形式を 'module' に指定
   },
-  experiments: {
-    outputModule: true, // モジュール出力を有効化
-  },
+  // experiments: {
+  //   outputModule: true, // モジュール出力を有効化
+  // },
   externals: [webpackNodeExternals()], // node_modules をバンドルから除外
   module: {
     rules: [
