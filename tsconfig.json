@@ -7,6 +7,15 @@
   "compilerOptions": {
     "strict": true,
     "noImplicitAny": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "jsx": "react-jsx", // 新しい JSX 変換
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true // TypeScriptもおけるReactのimportのエラー解決のため
     // "noExplicitAny": true, // このオプションは存在しないため削除
   }
 }

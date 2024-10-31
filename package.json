@@ -2,17 +2,15 @@
   "name": "my-intro-page",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run build:client && npm run build:server",
+    "build": "tsc -b && vite build",
     "lint": "eslint . --ext .ts,.tsx",
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,md}\"",
     "preview": "vite preview",
-    "build:client": "webpack --config webpack.client.js",
     "build:server": "webpack --config webpack.server.js",
-    "start:server": "node build/server.bundle.cjs"
+    "start:server": "node build/server.bundle.js"
   },
   "dependencies": {
     "express": "^4.21.1",
@@ -20,9 +18,9 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.25.9",
+    "@babel/core": "^7.26.0",
     "@babel/plugin-transform-modules-commonjs": "^7.25.9",
-    "@babel/preset-env": "^7.25.9",
+    "@babel/preset-env": "^7.26.0",
     "@babel/preset-react": "^7.25.9",
     "@babel/preset-typescript": "^7.26.0",
     "@eslint/js": "^9.11.1",

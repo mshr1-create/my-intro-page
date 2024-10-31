@@ -16,7 +16,7 @@ export default {
   module: {
     rules: [
       {
-        test: /\.(js|jsx|ts|tsx)$/, // 拡張子に .ts と .tsx を追加
+        test: /\.(ts|tsx|js|jsx)$/, // 拡張子に .ts と .tsx を追加
         exclude: /node_modules/, // node_modules は除外
         use: {
           loader: 'babel-loader', // Babel ローダーでトランスパイル
@@ -29,6 +29,6 @@ export default {
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx'], // 拡張子に .ts と .tsx を追加
+    extensions: ['.ts', '.tsx', '.js', '.jsx'], // 拡張子に .ts と .tsx を追加
   },
 };

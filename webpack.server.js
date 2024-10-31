@@ -8,23 +8,29 @@ const __dirname = path.dirname(__filename);
 
 export default {
   entry: './src/server/index.js', // エントリーポイント
-  target: 'node14', // Node.js 環境向けのビルド
-  mode: 'development',
+  target: 'node', // Node.js 環境向けのビルド
+  mode: 'production',
+  devtool: false, // ソースマップを無効化
+  externals: [webpackNodeExternals()], // node_modules をバンドルから除外
   output: {
-    filename: 'server.bundle.cjs', // 出力ファイル名
+    filename: 'server.bundle.js', // 出力ファイル名
     path: path.resolve(__dirname, 'build'), // 出力ディレクトリ
-    // libraryTarget: 'module', // ESモジュールとして出力
-    // module: true,
-    chunkFormat: 'module', // チャンク形式を 'module' に指定
+    // library: {
+    //   type: 'module',
+    // },
+    // chunkFormat: 'module', // チャンク形式を 'module' に指定
   },
   // experiments: {
-  //   outputModule: true, // モジュール出力を有効化
+  //   outputModule: true, // ES Modules 出力を有効化
   // },
-  externals: [webpackNodeExternals()], // node_modules をバンドルから除外
+  optimization: {
+    minimize: false, // コードの難読化を防ぐ
+    concatenateModules: true, // モジュールの結合を有効化
+  },
   module: {
     rules: [
       {
-        test: /\.(js|jsx|ts|tsx)$/, // 拡張子に .ts と .tsx を追加
+        test: /\.js$/, // .js ファイルに対して
         exclude: /node_modules/, // node_modules は除外
         use: {
           loader: 'babel-loader', // Babel ローダーを使用
@@ -37,6 +43,6 @@ export default {
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx'], // 拡張子に .ts と .tsx を追加
+    extensions: ['.js', '.jsx'], // 解決する拡張子
   },
 };
