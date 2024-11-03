@@ -12,6 +12,10 @@ export default {
     path: path.resolve(__dirname, 'build/public'), // 出力先ディレクトリ
     publicPath: '/',
   },
+  optimization: {
+    minimize: false, // コードの難読化を防ぐ
+    concatenateModules: true, // モジュールの結合を有効化
+  },
   mode: 'development', // 開発モード
   module: {
     rules: [

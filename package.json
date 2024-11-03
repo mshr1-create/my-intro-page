@@ -9,8 +9,10 @@
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,md}\"",
     "preview": "vite preview",
+    "build:client": "webpack --config webpack.client.js",
     "build:server": "webpack --config webpack.server.js",
-    "start:server": "node build/server.bundle.js"
+    "start:server": "node build/server.bundle.js",
+    "start": "node build/server.bundle.js"
   },
   "dependencies": {
     "express": "^4.21.1",
